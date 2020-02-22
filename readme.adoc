@@ -1,11 +1,11 @@
 = jQAssistant Camunda DMN Plugin
 
-This is a **DMN** parser for [jQAssistant](https://jqassistant.org/).
-It enables jQAssistant to scan and to analyze **[Camunda DMN](https://camunda.com/de/dmn/)** files.
+This is a **DMN** parser for https://jqassistant.org/[jQAssistant].
+It enables jQAssistant to scan and to analyze **https://camunda.com/de/dmn/[Camunda DMN]** files.
 
 == Getting Started
 
-Download the jQAssistant command line tool for your system: [jQAssistant - Get Started](https://jqassistant.org/get-started/).
+Download the jQAssistant command line tool for your system: https://jqassistant.org/get-started/[jQAssistant - Get Started].
 
 Next download the latest version from the release tab. Put the `jqa-camunda-dmn-plugin-*.jar` into the plugins
 folder of the jQAssistant commandline tool.
@@ -16,16 +16,8 @@ Now scan your files and wait for the plugin to finish:
 jqassistant.sh scan -f dish-decision.dmn
 ```
 
-You can then start a local Neo4j server to start querying the database at [http://localhost:7474](http://localhost:7474):
+You can then start a local Neo4j server to start querying the database at http://localhost:7474[http://localhost:7474]:
 
 ```bash
 jqassistant.sh server
 ```
-
-MATCH (m:Method{signature:"org.camunda.bpm.dmn.engine.DmnDecisionTableResult evaluateDecisionTableByKey(java.lang.String,java.util.Map)"})<-[:INVOKES]-(i:Method)<-[:DECLARES]-(t:Type) RETURN i,t LIMIT 25
-MATCH (m:Method{signature:"org.camunda.bpm.dmn.engine.DmnDecisionTableResult evaluateDecisionTableByKey(java.lang.String,java.util.Map)"})<-[dc:INVOKES]-(i:Method)<-[:DECLARES]-(t:Type) RETURN i,dc,t LIMIT 25
-MATCH
-    (m:Method{signature:"org.camunda.bpm.dmn.engine.DmnDecisionTableResult evaluateDecisionTableByKey(java.lang.String,java.util.Map)"})<-[dc:INVOKES]-(i:Method)<-[:DECLARES]-(t:Type)
-RETURN
-    i,dc,t
-LIMIT 25
