@@ -2,10 +2,10 @@
                                name="Camunda DMN">
     <description>Provides a scanner for Camunda DMN (*.dmn)( descriptors.</description>
     <model>
-        <class>org.jqassistant.contrib.plugin.camunda.dmn.model.DmnXmlDescriptor</class>
-        <class>org.jqassistant.contrib.plugin.camunda.dmn.model.DmnDecisionDescriptor</class>
+        <class>com.buschmais.jqassistant.plugin.camunda.dmn.model.DmnXmlDescriptor</class>
+        <class>com.buschmais.jqassistant.plugin.camunda.dmn.model.DmnDecisionDescriptor</class>
     </model>
     <scanner>
-        <class>org.jqassistant.contrib.plugin.camunda.dmn.scanner.DmnXmlScannerPlugin</class>
+        <class>com.buschmais.jqassistant.plugin.camunda.dmn.scanner.DmnXmlScannerPlugin</class>
     </scanner>
 </jqa-plugin:jqassistant-plugin>

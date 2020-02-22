@@ -1,0 +1,4 @@
+
+= jQAssistant Camunda DMN Plugin Release Notes
+
+include::0.0.1-SNAPSHOT.adoc[]

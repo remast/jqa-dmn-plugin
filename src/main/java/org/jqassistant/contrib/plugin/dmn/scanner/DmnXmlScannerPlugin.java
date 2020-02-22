@@ -1,4 +1,4 @@
-package org.jqassistant.contrib.plugin.camunda.dmn.scanner;
+package org.jqassistant.contrib.plugin.dmn.scanner;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,12 +9,12 @@ import com.buschmais.jqassistant.core.scanner.api.Scope;
 import com.buschmais.jqassistant.core.store.api.Store;
 import com.buschmais.jqassistant.plugin.common.api.model.FileDescriptor;
 import com.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource;
+import com.buschmais.jqassistant.plugin.xml.api.scanner.AbstractXmlFileScannerPlugin;
 import org.camunda.bpm.dmn.engine.DmnDecision;
 import org.camunda.bpm.dmn.engine.DmnEngine;
 import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
-import org.jqassistant.contrib.plugin.camunda.dmn.model.DmnDecisionDescriptor;
-import org.jqassistant.contrib.plugin.camunda.dmn.model.DmnXmlDescriptor;
-import com.buschmais.jqassistant.plugin.xml.api.scanner.AbstractXmlFileScannerPlugin;
+import org.jqassistant.contrib.plugin.dmn.model.DmnDecisionDescriptor;
+import org.jqassistant.contrib.plugin.dmn.model.DmnXmlDescriptor;
 
 /**
  * A scanner for JPA model units.
