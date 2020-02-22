@@ -4,6 +4,8 @@
     <model>
         <class>org.jqassistant.contrib.plugin.dmn.model.DmnXmlDescriptor</class>
         <class>org.jqassistant.contrib.plugin.dmn.model.DmnDecisionDescriptor</class>
+        <class>org.jqassistant.contrib.plugin.dmn.model.DmnDecisionInput</class>
+        <class>org.jqassistant.contrib.plugin.dmn.model.DmnDecisionOutput</class>
     </model>
     <scanner>
         <class>org.jqassistant.contrib.plugin.dmn.scanner.DmnXmlScannerPlugin</class>
