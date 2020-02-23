@@ -6,6 +6,7 @@
         <class>org.jqassistant.contrib.plugin.dmn.model.DmnDecisionDescriptor</class>
         <class>org.jqassistant.contrib.plugin.dmn.model.DmnDecisionInput</class>
         <class>org.jqassistant.contrib.plugin.dmn.model.DmnDecisionOutput</class>
+        <class>org.jqassistant.contrib.plugin.dmn.model.DmnDecisionRule</class>
     </model>
     <scanner>
         <class>org.jqassistant.contrib.plugin.dmn.scanner.DmnXmlScannerPlugin</class>

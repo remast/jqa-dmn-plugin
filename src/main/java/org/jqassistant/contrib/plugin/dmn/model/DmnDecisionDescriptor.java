@@ -24,10 +24,13 @@ public interface DmnDecisionDescriptor extends NamedDescriptor, DmnDescriptor {
     Boolean getDecisionTable();
     void setDecisionTable(Boolean decisionTable);
 
-    @Relation("DECLARES")
+    @Relation("INPUT")
     List<DmnDecisionInput> getInputs();
 
-    @Relation("DECLARES")
+    @Relation("OUTPUT")
     List<DmnDecisionOutput> getOutputs();
+
+    @Relation("CONTAINS")
+    List<DmnDecisionRule> getRules();
 
 }
