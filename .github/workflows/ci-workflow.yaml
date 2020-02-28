@@ -23,4 +23,4 @@ jobs:
         run: ./mvnw -B -DskipTests -Djqassistant.skip deploy -s .mvn/settings.xml -P github
         env:
           USERNAME: ${{ secrets.USERNAME }}
-          TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
