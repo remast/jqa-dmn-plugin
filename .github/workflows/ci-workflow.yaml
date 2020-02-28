@@ -11,10 +11,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java-version: [ 1.8.0, 9, 11 ]
+        java-version: [ 1.8, 9, 11 ]
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - uses: actions/labeler@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up JDK ${{ matrix.java-version }}
         uses: actions/setup-java@v1
         with:
