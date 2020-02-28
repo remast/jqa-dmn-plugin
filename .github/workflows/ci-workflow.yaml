@@ -17,16 +17,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Build only
-        run: ./mvnw -B -DskipTests -Djqassistant.skip clean install
-      - name: Unit Testing
-        run: ./mvnw -B -Djqassistant.skip clean install
-      - name: Integration Testing
-        run: ./mvnw -B -Djqassistant.skip -P IT clean install
-      - name: Full Build
+      - name: Build
         run: ./mvnw -B -P IT -Djqassistant.skip=false clean install
       - name: Deploy
-        run: ./mvnw -B -DskipTests -Djqassistant.skip deploy -s .mvn/settings.xml -Pgithub
+        run: ./mvnw -B -DskipTests -Djqassistant.skip deploy -s .mvn/settings.xml -P github
         env:
           USERNAME: ${{ secrets.USERNAME }}
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
