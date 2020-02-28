@@ -30,6 +30,7 @@ import org.camunda.bpm.engine.variable.Variables;
 @ProcessApplication("Dinner App DMN")
 public class DinnerApplication extends ServletProcessApplication
 {
+    private static final String DISH_DECISION_TABLE = "dish";
 
     @PostDeploy
     public void evaluateDecisionTable(ProcessEngine processEngine) {
@@ -41,15 +42,10 @@ public class DinnerApplication extends ServletProcessApplication
         .putValue("guestCount", 10)
         .putValue("guestsWithChildren", false);
 
-      DmnDecisionTableResult dishDecisionResult = decisionService.evaluateDecisionTableByKey("dish", variables);
+      DmnDecisionTableResult dishDecisionResult = decisionService.evaluateDecisionTableByKey(DISH_DECISION_TABLE, variables);
       String desiredDish = dishDecisionResult.getSingleEntry();
 
       System.out.println("Desired dish: " + desiredDish);
-
-      DmnDecisionTableResult beveragesDecisionResult = decisionService.evaluateDecisionTableByKey("beverages", variables);
-      List<Object> beverages = beveragesDecisionResult.collectEntries("beverages");
-
-      System.out.println("Desired beverages: " + beverages);
     }
 
 }

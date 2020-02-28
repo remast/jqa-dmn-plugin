@@ -17,3 +17,13 @@ git checkout -f Start
 ```
 
 License: The source files in this repository are made available under the [Apache License Version 2.0](./LICENSE).
+
+## JQAssistant
+
+First step is to run the Maven build:
+    
+    mvn clean install
+
+Second step is to run the JQAssistant server:
+
+    mvn jqassistant:server
