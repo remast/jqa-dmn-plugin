@@ -122,14 +122,16 @@
         </dependency>
     </dependencies>
 
-    <repositories>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>github</id>
+            <name>GitHub remast Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/remast/jqa-dmn-plugin</url>
+        </snapshotRepository>
         <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>github</id>
+            <name>GitHub remast Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/remast/jqa-dmn-plugin</url>
         </repository>
-    </repositories>
+    </distributionManagement>
 </project>

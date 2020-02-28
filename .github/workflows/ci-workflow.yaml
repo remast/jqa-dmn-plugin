@@ -18,15 +18,15 @@ jobs:
         with:
           java-version: 11
       - name: Build only
-        run: ./mvnw -DskipTests -Djqassistant.skip clean install
+        run: ./mvnw -B -DskipTests -Djqassistant.skip clean install
       - name: Unit Testing
-        run: ./mvnw -Djqassistant.skip clean install
+        run: ./mvnw -B -Djqassistant.skip clean install
       - name: Integration Testing
-        run: ./mvnw -Djqassistant.skip -P IT clean install
+        run: ./mvnw -B -Djqassistant.skip -P IT clean install
       - name: Full Build
-        run: ./mvnw -P IT -Djqassistant.skip=false clean install
+        run: ./mvnw -B -P IT -Djqassistant.skip=false clean install
       - name: Deploy
-        run: echo $USER
+        run: ./mvnw -B -DskipTests -Djqassistant.skip deploy -s .mvn/settings.xml -Pgithub
         env:
-          USER: remast
+          USERNAME: ${{ secrets.USERNAME }}
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
