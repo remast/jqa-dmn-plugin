@@ -13,9 +13,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - uses: actions/labeler@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up JDK ${{ matrix.java-version }}
         uses: actions/setup-java@v1
         with:
@@ -28,3 +25,8 @@ jobs:
         run: ./mvnw -Djqassistant.skip -P IT clean install
       - name: Full Build
         run: ./mvnw -P IT -Djqassistant.skip=false clean install
+      - name: Deploy
+        run: echo $USER
+        env:
+          USER: remast
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
