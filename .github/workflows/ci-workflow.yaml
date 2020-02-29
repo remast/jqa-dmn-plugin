@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Set up JDK ${{ matrix.java-version }}
+      - name: Set up JDK
         uses: actions/setup-java@v1
         with:
           java-version: 11
@@ -22,5 +22,4 @@ jobs:
       - name: Deploy
         run: ./mvnw -B -DskipTests -Djqassistant.skip deploy -s .mvn/settings.xml -P github
         env:
-          USERNAME: ${{ secrets.USERNAME }}
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
